@@ -1,1 +1,4 @@
-
+The #pragma omp single directive ensures that the block of code inside it is executed by only one thread in the parallel region. 
+The particular thread that executes the block is selected by OpenMP and may vary between executions. 
+The remaining threads skip the single block and continue with the following statements. 
+By default, an implicit barrier exists at the end of the single region, so the threads synchronize before continuing.

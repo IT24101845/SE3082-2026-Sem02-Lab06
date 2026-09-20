@@ -1,0 +1,6 @@
+The program creates multiple threads using the #pragma omp parallel directive. 
+Each thread first prints its thread ID and then reaches the #pragma omp barrier directive. 
+The barrier synchronizes all threads by making each thread wait until every thread in the parallel region has reached the barrier. 
+Only after all threads have reached the barrier can they continue to execute the statements following it. 
+Therefore, the messages printed before the barrier are completed by all threads before the messages after the barrier begin. 
+However, the barrier does not determine the execution order of the threads after the barrier, so the output order can vary between executions.

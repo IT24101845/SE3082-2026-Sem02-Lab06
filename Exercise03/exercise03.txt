@@ -1,1 +1,3 @@
-
+The #pragma omp master directive allows only the master thread, which has thread ID 0, to execute the statements inside the master block. 
+All other threads skip this block and continue executing the following statements. Unlike the single directive, master does not have 
+an implicit barrier at the end, so other threads do not wait for the master thread to complete the master block.

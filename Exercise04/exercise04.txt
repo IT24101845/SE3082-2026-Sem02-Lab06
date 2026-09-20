@@ -1,1 +1,12 @@
+Part 1 — parallel for
 
+The #pragma omp parallel for directive parallelizes the outer for loop. In this program, there are 5 iterations of the outer loop 
+(r = 1 to 5). OpenMP distributes these outer-loop iterations among the available threads. For each assigned value of r, 
+the corresponding thread executes all 10 iterations of the inner k loop. Therefore, the parallel workload is divided based on the 
+5 outer-loop iterations.
+
+Part 2 — collapse(2)
+
+When collapse(2) is used, OpenMP combines the two nested loops into a single iteration space. 
+Since the loops contain 5 × 10 = 50 combinations of r and k, OpenMP can distribute these 50 logical iterations among the available threads.
+This provides a finer-grained distribution of work compared with parallelizing only the outer loop.

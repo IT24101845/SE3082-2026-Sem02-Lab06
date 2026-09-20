@@ -1,1 +1,6 @@
-
+Task Parallelization: 
+The recursive Fibonacci function was parallelized using OpenMP tasks. 
+Two independent recursive calls, fib(n-1) and fib(n-2), are created as separate tasks using the omp task directive. 
+These tasks can be executed concurrently by different threads. The omp taskwait directive ensures that both recursive tasks finish 
+before their results are added. The single directive is used to create the initial Fibonacci task from one thread, 
+while the OpenMP runtime distributes the generated tasks among the available threads.
